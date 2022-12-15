@@ -1,3 +1,4 @@
+import i18next from 'i18next';
 import { useTranslation } from 'next-i18next';
 
 export const Footer = () => {
@@ -5,7 +6,11 @@ export const Footer = () => {
 
   return (
     <footer>
-      <p>{t('Current Language')}</p>
+      <h1>Current Language: {t('Current Language')}</h1>
+
+      <h1>Button Change: {t('Button Change')}</h1>
+      <button onClick={() => i18next.changeLanguage('en')}>en</button>
+      <button onClick={() => i18next.changeLanguage('de')}>de</button>
     </footer>
   );
 };
